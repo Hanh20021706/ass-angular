@@ -1,1 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+/* admin */
+
+
+.title-dashboard{
+    color: #fff;
+    font-weight: 700;
+}
+.title-dashboard:hover{
+    color: #fff;
+    
+}
+
+.navbar-admin{
+    background-color: #2E4053 !important;
+}
+.navbar-admin li a {
+    color: #fff;
+}
+.navbar-admin li{
+    margin: 0px 10px!important;
+}
+.navbar-admin li a:hover {
+    color: #fff;
+}
+
+
+/* dashboard  */
+
+.form-title{
+    background-color: #F4F6F7;
+    padding: 10px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+}
+.form-title h2{
+    font-family: 'Heebo', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* post admin */
+
+.main-content{
+    width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px dotted #ccc;
+    padding: 30px;
+}
+
+
+
+/* những class dùng chung */
+.btn-delete{
+    margin-right: 10px;
+}

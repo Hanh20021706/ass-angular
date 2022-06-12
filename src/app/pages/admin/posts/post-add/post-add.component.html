@@ -1,0 +1,36 @@
+
+<app-navbar></app-navbar>
+
+<div class="form-title">
+  <h2 >
+    Post
+  </h2>
+</div>
+
+{{post | json}}
+
+<div class="main-content">
+  
+
+<form (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input type="text" class="form-control"  placeholder="title" name="title" [(ngModel)]="post.title"/>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">image</label>
+    <input type="text" class="form-control" placeholder="image" name="image" [(ngModel)]="post.image" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">short-desc</label>
+    <input type="text" class="form-control" name="shortDesc" placeholder="shortDesc" [(ngModel)]="post.shortDesc" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">desc</label>
+    <input type="text" class="form-control" name="desc" placeholder="desc" [(ngModel)]="post.desc" />
+  </div>
+
+  <button  class="btn btn-primary">Submit</button>
+</form>
+
+</div>

@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<div class="form-title">
+    <h2 >
+      Post
+    </h2>
+  </div>
+  
+<div class="main-content">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">title</th>
+            <th scope="col">image</th>
+            <th scope="col">short-desc</th>
+            <th scope="col">desc</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of postList ; let i = index">
+           
+            <td>{{ i + 1}}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.image }}</td>
+            <td>{{ post.shortDesc }}</td>
+            <td>{{ post.desc }}</td>
+            <td>
+              <button class="btn btn-danger btn-delete" (click)="onRemovePost(post.id!)">
+                  <i class="fa-solid fa-delete-left"></i>
+              </button>
+              <button routerLink="/admin/posts/edit/{{post.id}}" class="btn btn-warning">
+                  <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </td>
+            
+          </tr>
+      
+        </tbody>
+      
+      
+      
+      </table>
+      <button type="button" routerLink="/admin/posts/create" class="btn btn-success">ADD POST</button>
+</div>
