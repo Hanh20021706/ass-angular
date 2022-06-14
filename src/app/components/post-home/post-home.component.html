@@ -1,0 +1,33 @@
+<section class="post-news">
+  <div class="container">
+    <div class="row-post">
+      <div class="title-post-news">
+        <h4>Recent posts</h4>
+      </div>
+      <div class="views-click">
+        <a href="">View all</a>
+      </div>
+    </div>
+    <div class="item-post-news">
+      <div  class="row">
+        <div  *ngFor="let post of postList | slice:0:2"class="col-md-6">
+          <div class="item-post">
+            <h2 class="title-post">{{post.title}}</h2>
+            <div class="time-posts">
+              <div class="post-date">
+                <p>12 Feb 2020</p>
+              </div>
+              <div class="category-post-news">design</div>
+            </div>
+            <div class="post-desc">
+              <p>
+               {{post.shortDesc}}
+              </p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>

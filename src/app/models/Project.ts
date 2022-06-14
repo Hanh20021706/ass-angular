@@ -3,5 +3,7 @@ export interface IProject {
     name: string,
     image: string,
     shortDesc: string,
-    desc: string
+    desc: string,
+    createAt: number,
+    categoryProjectId: number
 }

@@ -26,4 +26,7 @@ export class PostService {
     updatePost(post: IPost):Observable<IPost>{
         return this.http.put<IPost>(`${this.API_URL}/${post.id}`, post)
     }
+    getPostsCate():Observable<IPost[]>{
+        return this.http.get<IPost[]>(`${this.API_URL}?_expand=categoryPost`)
+    }
 }

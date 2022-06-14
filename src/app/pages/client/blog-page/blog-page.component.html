@@ -1,1 +1,24 @@
-<p>blog-page works!</p>
+<app-header-client></app-header-client>
+<main class="content-main">
+  <div class="container">
+    <h2 class="title-blog">Blog</h2>
+    <div class="blog-content">
+      <div *ngFor="let blog of blogList | slice:0:3" class="blog-item">
+        <h2 class="title-item">{{blog.title}}</h2>
+        <div class="time-blog">
+          <div class="blog-date">
+            <p>12 Feb 2020</p>
+          </div>
+          <div class="category-blog-news"><p>span</p></div>
+        </div>
+        <div class="short-desc">
+          <p>
+           {{blog.shortDesc}}
+          </p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</main>
+<app-footer-client></app-footer-client>

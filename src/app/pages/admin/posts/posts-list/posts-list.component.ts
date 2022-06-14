@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICategoryPost } from 'src/app/models/CategoryPosts';
 import { IPost } from 'src/app/models/Post';
 import { PostService } from 'src/app/services/post.service';
 
@@ -14,10 +15,12 @@ export class PostsListComponent implements OnInit {
     this.showPosts();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   showPosts(){
-    this.postsServices.getPosts().subscribe((data) => {
+    this.postsServices.getPostsCate().subscribe((data) => {
         this.postList = data
     })
   }

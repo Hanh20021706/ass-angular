@@ -1,0 +1,33 @@
+<section class="Featured-project">
+  <div class="container">
+    <h5 class="project-work">Featured works</h5>
+    <div class="row">
+      <div *ngFor="let work  of workList | slice:0:3;" class="project-item">
+        <div class="img-project">
+          <img
+            class="img-item-project"
+            src="{{work.image}}"
+            alt=""
+          />
+        </div>
+        <div class="desc-project">
+          <h5 class="title-project">{{work.name}}</h5>
+          <div class="time-project">
+            <div class="date-project">
+              <p>2020</p>
+            </div>
+            <div class="category-project">
+              <a href=""> Dashboards </a>
+            </div>
+          </div>
+          <div class="short-desc">
+            <p>
+              {{work.shortDesc}}
+            </p>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>

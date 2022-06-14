@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoryAddComponent } from './pages/admin/category/category-add/category-add.component';
-import { CategoryListComponent } from './pages/admin/category/category-list/category-list.component';
+import { CategoryPostAddComponent } from './pages/admin/category/category-post-add/category-post-add.component';
+import { CategoryPostListComponent } from './pages/admin/category/category-post-list/category-post-list.component';
+import { CategoryProjectAddComponent } from './pages/admin/category/category-project-add/category-project-add.component';
+import { CategoryProjectListComponent } from './pages/admin/category/category-project-list/category-project-list.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { PostAddComponent } from './pages/admin/posts/post-add/post-add.component';
 import { PostsListComponent } from './pages/admin/posts/posts-list/posts-list.component';
@@ -10,6 +12,7 @@ import { ProjectsListComponent } from './pages/admin/projects/projects-list/proj
 import { UserAddComponent } from './pages/admin/users/user-add/user-add.component';
 import { UsersListComponent } from './pages/admin/users/users-list/users-list.component';
 import { BlogPageComponent } from './pages/client/blog-page/blog-page.component';
+import { DetailWorkComponent } from './pages/client/detail-work/detail-work.component';
 import { HomePageComponent } from './pages/client/home-page/home-page.component';
 
 import { WorkPageComponent } from './pages/client/work-page/work-page.component';
@@ -18,6 +21,7 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'blog', component: BlogPageComponent },
   { path: 'work', component: WorkPageComponent },
+  { path: 'work/:id', component: DetailWorkComponent },
 
   // admin
   {
@@ -42,6 +46,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'list', pathMatch: 'full' },
           { path: 'list', component: ProjectsListComponent },
           { path: 'create', component: ProjectAddComponent },
+          { path: 'edit/:id', component: ProjectAddComponent },
         ],
       },
     //   user
@@ -51,16 +56,30 @@ const routes: Routes = [
           { path: '', redirectTo: 'list', pathMatch: 'full' },
           { path: 'list', component: UsersListComponent },
           { path: 'create', component: UserAddComponent },
+          { path: 'edit/:id', component: UserAddComponent },
         ],
       },
 
-    //   category
+    //   category posts
     {
-        path: 'categories',
+        path: 'categories/posts',
         children: [
           { path: '', redirectTo: 'list', pathMatch: 'full' },
-          { path: 'list', component: CategoryListComponent },
-          { path: 'create', component: CategoryAddComponent },
+          { path: 'list', component: CategoryPostListComponent },
+          { path: 'create', component: CategoryPostAddComponent },
+          { path: 'edit/:id', component: CategoryPostAddComponent },
+        ],
+      },
+
+      // category proejct
+    {
+        path: 'categories/projects',
+        children: [
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+          { path: 'list', component: CategoryProjectListComponent },
+          { path: 'create', component: CategoryProjectAddComponent },
+          { path: 'edit/:id', component: CategoryProjectAddComponent },
+      
         ],
       },
     ],

@@ -1,0 +1,27 @@
+<section class="recent-posts">
+  <div class="container">
+    <div *ngFor="let user of userList | slice:0:1; let i = index " class="info-user row">
+      <div class="col-md-8">
+        <div class="desc-user">
+          <h2 class="title-desc-user">
+            Hi, I am <span>{{user.name}}</span>,<br />
+            <span>Creative Technologist</span>
+          </h2>
+          <div class="desc-info">
+            <p>
+            {{user.about}}
+            </p>
+          </div>
+          <a href="">Download Resume</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img
+          class="img-user"
+          src="{{user.image}}"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>

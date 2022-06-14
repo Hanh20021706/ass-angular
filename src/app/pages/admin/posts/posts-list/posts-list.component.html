@@ -14,6 +14,8 @@
             <th scope="col">image</th>
             <th scope="col">short-desc</th>
             <th scope="col">desc</th>
+            <th scope="col">createAt</th>
+            <th scope="col">category</th>
             <th scope="col">action</th>
           </tr>
         </thead>
@@ -22,9 +24,11 @@
            
             <td>{{ i + 1}}</td>
             <td>{{ post.title }}</td>
-            <td>{{ post.image }}</td>
+            <td><img src="{{ post.image }}" alt="" width="100px"></td>
             <td>{{ post.shortDesc }}</td>
             <td>{{ post.desc }}</td>
+            <td>{{ post.createAt }}</td>
+            <td>{{ post.categoryPostId }}</td>
             <td>
               <button class="btn btn-danger btn-delete" (click)="onRemovePost(post.id!)">
                   <i class="fa-solid fa-delete-left"></i>

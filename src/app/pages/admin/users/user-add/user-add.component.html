@@ -1,1 +1,82 @@
-<p>user-add works!</p>
+<app-navbar></app-navbar>
+
+<div class="form-title">
+  <h2>User</h2>
+</div>
+
+{{ user | json }}
+
+<div class="main-content">
+  <form #formAdd="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="name"
+        name="name"
+        #name="ngModel" required minlength="5"
+        [(ngModel)]="user.name"
+      />
+      <div *ngIf="name.errors" class="alert">
+        <div  class="alert alert-danger" *ngIf="name.errors?.['required'] && (name.dirty || name.touched)">
+            name is required
+        </div>
+        <div  class="alert alert-danger" *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)">
+            Min length is 5
+        </div>
+    </div>
+    </div>
+ 
+  
+    <div class="mb-3">
+      <label class="form-label">position</label>
+      <input
+        type="text"
+        class="form-control"
+        name="position"
+        #position="ngModel" required minlength="5"
+        placeholder="position"
+        [(ngModel)]="user.position"
+      />
+      <div *ngIf="position.errors" class="alert">
+        <div  class="alert alert-danger" *ngIf="position.errors?.['required'] && (position.dirty || position.touched)">
+            position is required
+        </div>
+        <div  class="alert alert-danger" *ngIf="position.errors?.['minlength'] && (position.dirty || position.touched)">
+            Min length is 5
+        </div>
+    </div>
+    </div>
+   
+    <div class="mb-3">
+      <label class="form-label">about</label>
+      <input
+        type="text"
+        class="form-control"
+        name="about"
+        #about="ngModel" required
+        placeholder="about" 
+        [(ngModel)]="user.about"
+      />
+      <div *ngIf="about.errors" class="alert">
+        <div  class="alert alert-danger" *ngIf="about.errors?.['required'] && (about.dirty || about.touched)">
+            about is required
+        </div>
+    </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">image</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="image"
+          name="image"
+          [(ngModel)]="user.image"
+        />
+      </div>
+
+    <button [disabled]="!formAdd.valid"  class="btn btn-success">Submit</button>
+    <button  routerLink="/admin/user" class="btn btn-dark back-list">Back</button>
+  </form>
+</div>

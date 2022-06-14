@@ -1,4 +1,4 @@
-export interface ICategory {
+export interface ICategoryPost {
     id? :number,
     name: string
 }

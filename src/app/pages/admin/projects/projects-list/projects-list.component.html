@@ -1,1 +1,49 @@
-<p>projects-list works!</p>
+<app-navbar></app-navbar>
+<div class="form-title">
+    <h2 >
+      project
+    </h2>
+  </div>
+  
+<div class="main-content">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">name</th>
+            <th scope="col">image</th>
+            <th scope="col">short-desc</th>
+            <th scope="col">desc</th>
+            <th scope="col">createAt</th>
+            <th scope="col">category</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projectList ; let i = index">
+           
+            <td>{{ i + 1}}</td>
+            <td>{{ project.name }}</td>
+            <td><img src="{{ project.image }}" alt="" width="100px"></td>
+            <td>{{ project.shortDesc }}</td>
+            <td>{{ project.desc }}</td>
+            <td>{{ project.createAt }}</td>
+            <td>{{ project.categoryProjectId }}</td>
+            <td>
+              <button class="btn btn-danger btn-delete" (click)="onRemoveProject(project.id!)">
+                  <i class="fa-solid fa-delete-left"></i>
+              </button>
+              <button routerLink="/admin/projects/edit/{{project.id}}" class="btn btn-warning">
+                  <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+            </td>
+            
+          </tr>
+      
+        </tbody>
+      
+      
+      
+      </table>
+      <button type="button" routerLink="/admin/projects/create" class="btn btn-success">ADD PROJECT</button>
+</div>

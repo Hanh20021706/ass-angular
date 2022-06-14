@@ -1,1 +1,39 @@
-<p>work-page works!</p>
+<app-header-client></app-header-client>
+
+<main class="content-main">
+  <div class="container">
+    <h2 class="title-work">Work</h2>
+    <div class="work-content">
+      <div *ngFor="let work of workList | slice:0:3" class="work-item">
+        <div class="img-work">
+         <a routerLink="/work/{{work.id}}">
+            <img
+            class="img-item-work"
+            src="{{work.image}}"
+            alt=""
+          />
+         </a>
+        </div>
+        <div class="desc-work">
+          <h5 class="title-work">{{work.name}}</h5>
+          <div class="time-work">
+            <div class="date-work">
+              <p>{{work.createAt}}</p>
+            </div>
+            <div class="category-work">
+              <a href=""> Dashboards </a>
+            </div>
+          </div>
+          <div class="work-desc">
+            <p>
+             {{work.shortDesc}}
+            </p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+</main>
+
+<app-footer-client></app-footer-client>
